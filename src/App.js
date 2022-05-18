@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import NavbarComp from "./component/NavbarComp.js";
+import Breadcrumbs from "./component/Breadcrumbs.js";
+import TableNav from "./component/TableNav.js";
+import {Container, Row, Col} from "react-bootstrap";
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavbarComp/>
+      <Container>
+        <Row className="justify-content-md-center" bg="secondary">
+          <Col md={{ span: 4, offset: 7 }}>
+            <Breadcrumbs/>
+          </Col>
+        </Row>
+        <Row className="justify-content-md-center">
+          <TableNav/>
+        </Row>
+      </Container>
     </div>
   );
 }
